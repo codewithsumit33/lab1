@@ -1,12 +1,16 @@
-# Write a Python program to remove all duplicates from a list and print the
-# unique elements.
+24# Write a program to check whether a given number is prime or not.
+number = int(input("Enter a number : "))
 
-test_list = []
-number = int(input("Enter the number of elements you want to add in the list: "))
+if (number > 1):
+    is_prime = True
+    for value in range(2, int(number ** 0.5) + 1):
+        if (number % value == 0):
+            is_prime = False
+            break
 
-for value in range(number):
-    temp = input("Enter the element in the list: ")
-    test_list.append(temp)
-
-unique_set = set(test_list)
-print(f"{unique_set}")
+    if (is_prime):
+        print(f"{number} is a prime number")
+    else:
+        print(f"{number} is not a prime number")
+else:
+    print("Enter a valid number greater than 1")

@@ -1,25 +1,17 @@
-# Write a Python program to remove elements from a list that are also present
-# in another list.
+# Write a program that finds all numbers between 100 and 999 where the sum
+# of the cubes of the digits equals the number itself (Armstrong numbers).
+lists = []
 
-list1 = []
-num1 = int(input("Enter the number of elements you want to add in the list: "))
+for value in range(100, 1000):
+    hundredth_place = int(value / 100)
+    tenth_place = int((value / 10) % 10)
+    ones_place = int((value % 10))
 
-for value in range(num1):
-    temp = int(input("Enter the element : "))
-    list1.append(temp)
+    sum = hundredth_place**3 + tenth_place**3 + ones_place**3
 
-list2 = []
-num2 = int(input("Enter the number of elements you want to add in the list: "))
-
-for value in range(num2):
-    temp = int(input("Enter the element : "))
-    list2.append(temp)
-
-print(f"Original List: {list1}")
-print(f"Original List: {list2}")
+    if(sum == value):
+        lists.append(value)
     
-for value in list1[:]: #iterating over the copy of list1 coz when we remove the item from the list1 the list get shorter so we need to iterate over the copy of the list1
-    if value in list2:
-        list1.remove(value)
+print(f"\nThe lists of amstrong number from 100 to 999 is {lists}")
 
-print(f"The new list is {list1}")
+

@@ -1,19 +1,15 @@
-# Given two lists, write a program to find their intersection using sets.
+# Write a program that finds all numbers between 100 and 999 where the sum
+# of the cubes of the digits equals the number itself (Armstrong numbers).
+lists = []
 
-lists1 = []
-lists2 = []
+for value in range(100, 1000):
+    hundredth_place = int(value / 100)
+    tenth_place = int((value / 10) % 10)
+    ones_place = int((value % 10))
 
-num1 = int(input("Enter the number of elements you want to add in the list 1 : \n"))
-for value in range(num1):
-    temp = int(input("Enter the element : "))
-    lists1.append(temp)
+    sum = hundredth_place**3 + tenth_place**3 + ones_place**3
 
-num2 = int(input("\nEnter the number of elements you want to add in the list 2 : \n"))
-for value in range(num2):
-    temp = int(input("Enter the element : "))
-    lists2.append(temp)
-
-set1 = set(lists1)
-set2 = set(lists2)
-
-print(f"\nThe intersection of the sets are {set1.intersection(set2)}")
+    if(sum == value):
+        lists.append(value)
+    
+print(f"\nThe lists of amstrong number from 100 to 999 is {lists}")

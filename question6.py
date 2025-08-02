@@ -1,19 +1,25 @@
-# Given two lists, write a program to find their intersection using sets.
+4# Write a program that accepts 10 integers from the user and counts how many
+# are positive, negative, and zero.
 
-lists1 = []
-lists2 = []
+lists = []
+positive_lists = []
+negative_lists = []
+zero_lists = []
 
-num1 = int(input("Enter the number of elements you want to add in the list 1 : \n"))
-for value in range(num1):
-    temp = int(input("Enter the element : "))
-    lists1.append(temp)
+number_of_items = int(
+    input("Enter the number of items you want inside the list : "))
+for value in range(number_of_items):
+    temp = int(input("Enter the value of an integer : "))
+    lists.append(temp)
 
-num2 = int(input("\nEnter the number of elements you want to add in the list 2 : \n"))
-for value in range(num2):
-    temp = int(input("Enter the element : "))
-    lists2.append(temp)
+for value in range(number_of_items):
+    if (lists[value] > 0):
+        positive_lists.append(lists[value])
+    elif (lists[value] < 0):
+        negative_lists.append(lists[value])
+    else:
+        zero_lists.append(lists[value])
 
-set1 = set(lists1)
-set2 = set(lists2)
-
-print(f"\nThe intersection of the sets are {set1.intersection(set2)}")
+print(f"\nThe total number of the positive items in the list is {len(positive_lists)} i.e {positive_lists}")
+print(f"\nThe total number of the negative items in the list is {len(negative_lists)} i.e {negative_lists}")
+print(f"\nThe total number of the zero items in the list is {len(zero_lists)} i.e {zero_lists}")

@@ -1,20 +1,12 @@
-# Given a list of names, write a program to count how many times each name
-# appears using a dictionary.
+# Write a program that reads a number and prints whether it is a palindrome or
+# not.
 
-name_lists = []
-number = int(input("Enter the number of names you want to add in the list: "))
+number = (input("Enter the number : "))
 
-for value in range(number):
-    temp = input("Enter the name: ")
-    name_lists.append(temp)
+if(number == number[::-1]):
+    print(f"{number} is a palindrome")
+else:
+    print(f"{number} is not a palindrome")
 
-name_count = {}
-for name in name_lists:
-    if name in name_count.keys():
-        name_count[name] += 1
-    else:
-        name_count[name] = 1
 
-print(name_count)
-        
-
+5

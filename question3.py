@@ -1,17 +1,17 @@
+# Write a program that reads a number and prints the factorial of that number
+# using a while loop.
 
-# Write a Python function that accepts a list and returns a new list with only
-# the even numbers from the original list.
+number = int(input("Enter a number : "))
+loop_count = 1
+factorial = 1
 
-main_lists = []
-even_lists = []
-number = int(input("Enter the number of elements you want to add in the list: "))
-
-for value in range(number):
-    temp = int(input("Enter the element: "))
-    main_lists.append(temp)
-
-for value in range(number):
-    if(main_lists[value] % 2 == 0):
-        even_lists.append(main_lists[value])
-
-print(even_lists)
+if (number < 0):
+    print("Invalid Number. Please enter a number greater than or equal to zero")
+elif (number == 0):
+    print("The factorial of 0 is 1")
+else:
+    loop_count = 1
+    while (loop_count <= number):
+        factorial *= loop_count
+        loop_count += 1
+    print(f"The factorial of the {number} is {factorial}")
